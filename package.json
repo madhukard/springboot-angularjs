@@ -1,0 +1,33 @@
+{
+  "name": "springboot-angularjs",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A starter project for Spring Boot/AngularJS/Bootstrap",
+  "repository": "https://github.com/madhukard/springboot-angularjs",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "3.x",
+    "karma": "~0.10",
+    "protractor": "^1.1.1",
+    "bower": "^1.3.1",
+    "shelljs": "^0.2.6",
+    "karma-junit-reporter": "^0.2.2"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "node ./src/main/webapp/server.js",
+
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor ./src/test/e2e-tests/protractor.conf.js"
+
+  }
+}
